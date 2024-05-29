@@ -1,0 +1,25 @@
+name: GitlabSync
+
+on:
+  push:
+  delete:
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    name: Git Repo Sync
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+      with:
+        fetch-depth: 0
+
+    - name: Sync with GitLab
+      uses: wangchucheng/git-repo-sync@v0.1.0
+      with:
+        # URL del repositorio de destino, por ejemplo: https://gitlab.com/user/repo.git
+        target-url: ${{ secrets.https://gitlab.com/AlvaroTxa/suitecase_tracking }}
+        # Nombre de usuario del repositorio de destino
+        target-username: ${{ secrets.AlvaroTxa }}
+        # Token de acceso para el repositorio de destino
+        target-token: ${{ secrets.glpat-vPFm3wKygNLnyz9yQEHu }}
