@@ -1,7 +1,7 @@
-import torch
-import numpy as np
-from sort.sort import Sort
 from collections import defaultdict
+from sort.sort import Sort
+import numpy as np
+import torch
 import cv2
 import os
 
@@ -242,7 +242,7 @@ class ObjectTracker:
             if not ret:
                 break
 
-            # Se recorta el bbox
+            # Bounding box is cropped
             img = frame[y1:y2, x1:x2]
 
             # Check if the image is empty
