@@ -12,6 +12,24 @@ This project implements a system to track and monitor people and suitcases using
 - **Capture Images**: Captures three images of the bounding box of the person who dropped the suitcase and saves them in a folder named with the person's and suitcase's IDs.
 - **Visual Feedback**: Displays bounding boxes around detected objects with different colors (green for normal, red for disassociated) in the video feed.
 
+## How It Works
+
+### 1. Initialization:
+- Load the YOLOv5 model for object detection.
+- Initialize the SORT tracker.
+### 2. Object Detection:
+- Detect objects in each video frame using YOLOv5.
+- Filter detections to only include persons and suitcases with confidence scores above a threshold.
+### 3. Object Tracking:
+- Update the SORT tracker with the filtered detections to maintain consistent object identities.
+### 4. Association and Disassociation:
+- Check and associate persons with nearby suitcases.
+- Detect when a person drops a suitcase and capture images of the person.
+### 5. Visualization:
+- Draw bounding boxes around detected objects.
+- Change the color of the bounding box to red when a person drops a suitcase.
+- Display the frame with the drawn bounding boxes.
+
 ## Installation
 
 1. Clone the repository:
@@ -25,10 +43,14 @@ This project implements a system to track and monitor people and suitcases using
     pip install -r requirements.txt
     ```
 
-3. Install YOLOv5 and its dependencies:
+3. Clone YOLOv5 repository:
     ```sh
-    pip install torch torchvision torchaudio
-    pip install git+https://github.com/ultralytics/yolov5.git
+    git clone https://github.com/ultralytics/yolov5.git
+    ```
+
+4. Clone SORT repository:
+    ```sh
+    git clone https://github.com/abewley/sort.git
     ```
 
 ## Usage
