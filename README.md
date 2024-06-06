@@ -73,16 +73,20 @@ This project implements a system to track and monitor people and suitcases using
 ## Example Output
 
 ### 1. Association:
-When a person is associated to a suitcase, the system will output a message like:</br>
-<br>**[INFO] Person 1 has taken suitcase 2**</br>
-<br>And the screen will show green bounding boxes:
+When a person is associated to a suitcase, the system will output a message like:
+
+**[INFO] Person 1 has taken suitcase 2**
+
+And the screen will show green bounding boxes:
 
 ![association](./sample_screenshots/association.png)
 
 ### 2. Disassociation:
-If a person drops a suitcase, the system will output a message like:</br>
-<br>**[INFO] Person 3 has dropped suitcase 1**</br>
-<br>The bounding box around the person will turn red, and cropped images of the person's bounding box will be saved in the `Outputs` folder.
+If a person drops a suitcase, the system will output a message like:
+
+**[INFO] Person 3 has dropped suitcase 1**
+
+The bounding box around the person will turn red, and cropped images of the person's bounding box will be saved in the `Outputs` folder.
 
 The screen will show:
 
